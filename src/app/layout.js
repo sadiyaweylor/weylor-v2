@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Inter_Tight } from "next/font/google";
 import ThemeProvider from "@/components/theme/ThemeProvider";
 import Footer from "@/components/footer/Footer";
 import LenisProvider from "@/components/LenisProvider";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata = {
   title: "Weylor — Sustainable Modern Fashion",
@@ -76,6 +77,7 @@ export default function RootLayout({ children }) {
         </ThemeProvider>
 
       </body>
+      <GoogleAnalytics gaId="G-22YF53SSHG" />
     </html>
   );
 }
