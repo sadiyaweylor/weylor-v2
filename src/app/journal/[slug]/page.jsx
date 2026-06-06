@@ -23,21 +23,7 @@ export async function generateMetadata({ params }) {
 
   if (!post) return {};
 
-  return {
-    title: post.seo.title,
-    description: post.seo.description,
-    keywords: post.seo.keywords,
-  };
-}
-
-  const post = journalPosts.find((p) => p.slug === slug);
-
-if (!post) {
-  return {};
-}
-  const url = `https://weylor.com/journal/${post.slug}`;
-
-  /*Create Suggested Posts*/
+  const url = `https://weylor.world/journal/${post.slug}`;
 
   return {
     title: post.seo.title,
@@ -51,7 +37,7 @@ if (!post) {
     openGraph: {
       title: post.seo.title,
       description: post.seo.description,
-      url: url,
+      url,
       type: "article",
       images: [
         {
@@ -69,7 +55,7 @@ if (!post) {
       images: [post.image],
     },
   };
-
+}
 
 /* ---------------- PAGE ---------------- */
 
@@ -132,8 +118,7 @@ export default async function ArticlePage({ params }) {
       </div>
 
       <div className="flex flex-wrap gap-4 mt-16">
-<ExploreButton 
-/>
+<ExploreButton/> 
 
   <MagneticButton>
 
