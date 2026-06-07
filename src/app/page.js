@@ -66,7 +66,7 @@ export default function Page() {
               transition={{ delay: 0.4 }}
               className="mx-auto mt-6 max-w-xl text-lg text-white"
             >
-              Elevated fashion — Premium and sustainable.
+              Elevated fashion — Premium, Sustainable and Vegan.
             </motion.p>
 
             <Link href="#">

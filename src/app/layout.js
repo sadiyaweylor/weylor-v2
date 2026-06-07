@@ -8,7 +8,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 export const metadata = {
   title: "Weylor — Sustainable Modern Fashion",
   description:
-    "Weylor creates premium sustainable clothing designed for modern multi-occasion and everyday life.",
+    "Weylor creates premium sustainable and vegan clothing designed for modern multi-occasion and everyday life.",
 
   keywords: ["Weylor", "sustainable fashion", "eco clothing"],
   authors: [{ name: "Weylor" }],
@@ -16,7 +16,7 @@ export const metadata = {
   metadataBase: new URL("https://weylor.world"),
 
   openGraph: {
-    title: "Weylor — Premium Sustainable Fashion",
+    title: "Weylor — Premium Sustainable and Vegan Fashion",
     description:
       "Premium sustainable clothing designed for modern everyday life.",
     url: "https://weylor.world",
@@ -76,8 +76,9 @@ export default function RootLayout({ children }) {
           <Footer />
         </ThemeProvider>
 
+              <GoogleAnalytics gaId="G-22YF53SSHG" />
+
       </body>
-      <GoogleAnalytics gaId="G-22YF53SSHG" />
     </html>
   );
 }

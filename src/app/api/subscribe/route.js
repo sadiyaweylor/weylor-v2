@@ -60,7 +60,7 @@ export async function POST(req) {
       if (error.code === "23505") {
         return Response.json({
           success: true,
-          message: "You're already part of the Weylor Circle! ✨",
+          message: "You're already part of the Weylor Circle!",
         });
       }
 
@@ -256,7 +256,7 @@ export async function POST(req) {
 
     return Response.json({
       success: true,
-      message: "You're in. Welcome to Weylor! ✨",
+      message: "You're in. Welcome to Weylor!",
     });
   } catch (err) {
     console.error("Subscription error:", err);
