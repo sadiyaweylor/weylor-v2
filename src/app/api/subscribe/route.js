@@ -46,13 +46,10 @@ export async function POST(req) {
     console.log("📧 Email:", email);
 
     // Insert subscriber
-    const { data, error } = await supabase
-      .from("subscribers")
-      .insert([{ email }])
-      .select()
-      .single();
+    const { error } = await supabase
+    .from("subscribers")
+    .insert([{ email }]);
 
-    console.log("Supabase data:", data);
     console.log("Supabase error:", error);
 
     if (error) {

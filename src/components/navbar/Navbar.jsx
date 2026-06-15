@@ -20,7 +20,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => {
-      setVisible(window.scrollY > 20);
+      setVisible(window.scrollY > 5);
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
