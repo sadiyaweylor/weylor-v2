@@ -2,14 +2,15 @@ export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
 import { supabase } from "@/lib/supabase";
+import { supabaseAdmin } from "@/lib/supabase-admin";
 
 /* ---------------- GET LOVE COUNT ---------------- */
 
 export async function GET() {
   try {
-    const { count, error } = await supabase
-      .from("loves")
-      .select("*", { count: "exact", head: true });
+    const { count, error } = await supabaseAdmin
+    .from("loves")
+    .select("*", { count: "exact", head: true });
 
     if (error) {
       console.error("GET loves error:", error);
@@ -35,12 +36,9 @@ export async function POST(req) {
       return Response.json({ error: "device_id required" }, { status: 400 });
     }
 
-    const { error } = await supabase
-      .from("loves")
-      .upsert(
-        { device_id: body.device_id },
-        { onConflict: "device_id" }
-      );
+    const { error } = await supabaseAdmin
+    .from("loves")
+    .insert([{ device_id: body.device_id }]);
 
     if (error) {
       console.error("POST love error:", error);
@@ -66,10 +64,10 @@ export async function DELETE(req) {
       return Response.json({ error: "device_id required" }, { status: 400 });
     }
 
-    const { error } = await supabase
-      .from("loves")
-      .delete()
-      .eq("device_id", body.device_id);
+    const { error } = await supabaseAdmin
+    .from("loves")
+    .delete()
+    .eq("device_id", body.device_id);
 
     if (error) {
       console.error("DELETE love error:", error);
